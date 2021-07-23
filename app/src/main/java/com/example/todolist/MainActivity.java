@@ -85,21 +85,21 @@ public class MainActivity extends AppCompatActivity {
         taskList.add(task);
         taskNameList.add(userTask.get(0));
         if (taskList.size() == 1) {
-            itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, taskList.);
+            itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, Collections.singletonList(taskList.get(0).taskName));
             ListView listView = (ListView) findViewById(R.id.list_view);
             listView.setAdapter(itemsAdapter);
         }
         else {
             itemsAdapter.notifyDataSetChanged();
         }
-
-        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
-                String item = (String) parent.getItemAtPosition(position);
-
-            }
-        });
+//        Needs fixing
+//        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
+//                String item = (String) parent.getItemAtPosition(position);
+//
+//            }
+//        });
 
     }
 
